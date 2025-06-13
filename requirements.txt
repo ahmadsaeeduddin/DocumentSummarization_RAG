@@ -9,6 +9,7 @@ markdown
 tqdm
 PyPDF2
 nltk
+sentencepiece
 
 # Flask for frontend (later)
 flask
