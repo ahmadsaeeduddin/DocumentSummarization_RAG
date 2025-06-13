@@ -3,12 +3,14 @@ import numpy as np
 from utilis import load_document
 from emb import embed_chunks, create_faiss_index, save_index, save_chunks
 from retrieval import embed_query, retrieve_top_k
+from summarizer import generate_summary
+
 from sentence_transformers import SentenceTransformer
 from nltk.tokenize import sent_tokenize
 import faiss
 import pickle
 
-def chunk_text(text: str, max_words: int = 150):
+def chunk_text(text: str, max_words: int = 100):
     sentences = sent_tokenize(text)
     chunks, chunk = [], []
     word_count = 0
@@ -46,9 +48,13 @@ def summarize_pipeline(filepath, query="Summarize this document", k=5):
     print("\n🔍 Retrieved Top-K Chunks:")
     for i, chunk in enumerate(top_chunks):
         print(f"\n--- Chunk {i+1} (Distance: {distances[i]:.4f}) ---\n{chunk[:400]}...")
+        
+    summary = generate_summary(top_chunks)
+    print("\n📄 FINAL SUMMARY:\n")
+    print(summary)
 
-    return top_chunks
+    return summary
 
 if __name__ == "__main__":
-    filepath = os.path.join("data", "d3.pdf")
+    filepath = os.path.join("data", "d1.txt")
     top_chunks = summarize_pipeline(filepath)
