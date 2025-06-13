@@ -8,7 +8,7 @@ from nltk.tokenize import sent_tokenize
 import faiss
 import pickle
 
-def chunk_text(text: str, max_words: int = 150) -> list:
+def chunk_text(text: str, max_words: int = 150):
     sentences = sent_tokenize(text)
     chunks, chunk = [], []
     word_count = 0
@@ -47,7 +47,7 @@ def summarize_pipeline(filepath, query="Summarize this document", k=5):
     for i, chunk in enumerate(top_chunks):
         print(f"\n--- Chunk {i+1} (Distance: {distances[i]:.4f}) ---\n{chunk[:400]}...")
 
-    return top_chunks  # This will be passed to Phase 5
+    return top_chunks
 
 if __name__ == "__main__":
     filepath = os.path.join("data", "d3.pdf")
