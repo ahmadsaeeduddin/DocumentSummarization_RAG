@@ -1,0 +1,17 @@
+# Core libraries
+langchain
+faiss-cpu
+sentence-transformers
+openai
+pypdf
+python-dotenv
+markdown
+tqdm
+PyPDF2
+nltk
+
+# Flask for frontend (later)
+flask
+
+# Optional
+chardet
