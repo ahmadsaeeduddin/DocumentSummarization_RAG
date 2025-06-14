@@ -1,5 +1,7 @@
 # 📄 Document Summarization using Retrieval-Augmented Generation (RAG)
 
+Github: `https://github.com/ahmadsaeeduddin/DocumentSummarization_RAG`
+
 Summarization system combines retrieval-based context selection with large language model (LLM) generation. The system accepts a long document and generate a concise, coherent summary using semantic chunking and RAG.
 
 A complete RAG-based document summarizer that supports PDF, TXT, and MD formats using:
@@ -46,7 +48,7 @@ DOCUMENT-SUMMARIZATION(RAG)/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/document-summarizer.git
+git clone https://github.com/ahmadsaeeduddin/DocumentSummarization_RAG
 cd document-summarizer
 ```
 
