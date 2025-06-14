@@ -43,9 +43,8 @@ form.addEventListener("submit", async (e) => {
   progressBar.value = 0;
   summaryBox.classList.remove("show");
 
-  // Simulate summary generation time (5 seconds)
-  let duration = 20000; // ms
-  let interval = 300; // update every 100ms
+  let duration = 20000;
+  let interval = 300;
   let elapsed = 0;
 
   const timer = setInterval(() => {
@@ -111,5 +110,4 @@ form.addEventListener("submit", async (e) => {
   xhr.send(formData);
 });
 
-// Initialize particles
 document.addEventListener("DOMContentLoaded", createParticles);
