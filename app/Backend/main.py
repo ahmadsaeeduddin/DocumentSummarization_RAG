@@ -1,9 +1,9 @@
 import os
 import numpy as np
-from utilis import load_document
-from emb import embed_chunks, create_faiss_index, save_index, save_chunks
-from retrieval import embed_query, retrieve_top_k
-from summarizer import generate_summary
+from .utilis import load_document
+from .emb import embed_chunks, create_faiss_index, save_index, save_chunks
+from .retrieval import embed_query, retrieve_top_k
+from .summarizer import generate_summary
 
 from sentence_transformers import SentenceTransformer
 from nltk.tokenize import sent_tokenize
