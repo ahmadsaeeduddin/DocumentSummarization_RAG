@@ -26,7 +26,7 @@ def chunk_text(text: str, max_words: int = 100):
         chunks.append(' '.join(chunk))
     return chunks
 
-def summarize_pipeline(filepath, query="Summarize this document", k=5):
+def summarize_pipeline(filepath, query="Summarize this document", k=3):
     # Load and chunk
     print(f"📄 Loading: {filepath}")
     text = load_document(filepath)
@@ -49,9 +49,10 @@ def summarize_pipeline(filepath, query="Summarize this document", k=5):
     for i, chunk in enumerate(top_chunks):
         print(f"\n--- Chunk {i+1} (Distance: {distances[i]:.4f}) ---\n{chunk[:400]}...")
         
+    #summary generation
     summary = generate_summary(top_chunks)
-    print("\n📄 FINAL SUMMARY:\n")
-    print(summary)
+    print("\n📄 FINAL SUMMARY GENERATED ---\n")
+    # print(summary)
 
     return summary
 

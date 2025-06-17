@@ -14,6 +14,6 @@ def embed_query(query: str, model_name='all-MiniLM-L6-v2'):
     model = SentenceTransformer(model_name)
     return model.encode([query])
 
-def retrieve_top_k(query_embedding, index, k=5):
+def retrieve_top_k(query_embedding, index, k=3):
     D, I = index.search(query_embedding, k)
-    return I[0], D[0]  # I = indices, D = distances
+    return I[0], D[0]

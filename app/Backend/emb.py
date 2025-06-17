@@ -4,8 +4,7 @@ from sentence_transformers import SentenceTransformer
 import pickle
 import os
 
-# Load pre-trained model once
-model = SentenceTransformer('all-MiniLM-L6-v2')  # lightweight but powerful
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
 def embed_chunks(chunks):
     """Convert text chunks to vector embeddings."""
