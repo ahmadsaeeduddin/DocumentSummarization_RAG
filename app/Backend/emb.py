@@ -4,8 +4,9 @@ from sentence_transformers import SentenceTransformer
 import pickle
 import os
 
-# Load pre-trained model once
-model = SentenceTransformer('all-MiniLM-L6-v2')  # lightweight but powerful
+model = SentenceTransformer('all-MiniLM-L6-v2')
+# model = SentenceTransformer("all-mpnet-base-v2")
+
 
 def embed_chunks(chunks):
     """Convert text chunks to vector embeddings."""
@@ -14,7 +15,7 @@ def embed_chunks(chunks):
 def create_faiss_index(embeddings):
     """Create a FAISS index from embeddings (for searching later)."""
     dim = embeddings.shape[1]
-    index = faiss.IndexFlatL2(dim)  # L2 distance = Euclidean
+    index = faiss.IndexFlatL2(dim)
     index.add(embeddings)
     return index
 
